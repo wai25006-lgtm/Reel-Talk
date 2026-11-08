@@ -27,3 +27,15 @@ export async function fetchGenres() {
     const data = await response.json();
     return data.genres;
 }
+
+export async function fetchMovieDetails(movieId) {
+  const response = await fetch(
+    `${baseUrl}/movie/${movieId}?api_key=${apiKey}`
+  );
+
+  if (!response.ok) {
+    throw new Error("Could not load movie details");
+  }
+
+  return await response.json();
+}

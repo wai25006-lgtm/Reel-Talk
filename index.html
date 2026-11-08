@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,58 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reel Talk</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <script type="module" src="js/main.js" defer></script>
+    <script type="module" src="js/main.js"></script>
   </head>
   <body>
     <header>
-      <h1>Reel Talk</h1>
-      <nav>
+      <div class="brand">
+        <img class="site-logo" src="images/Reel_Talk_Logo.png" alt="Reel Talk logo" />
+        <h1>Reel Talk</h1>
+      </div>
+
+      <button class="menu-button" id="menu-button" aria-expanded="false" aria-controls="main-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="visually-hidden">Open menu</span>
+      </button>
+
+      <nav id="main-nav">
         <a href="index.html">Home</a>
         <a href="#movies">Movies</a>
         <a href="#review-form">Add Review</a>
       </nav>
     </header>
+
     <main>
       <section class="welcome">
+        <p class="small-title">WELCOME TO THE MOVIE FEED</p>
         <h2>Welcome to Reel Talk</h2>
         <p>Find movies, read reviews, and share your opinion.</p>
       </section>
+
       <section class="search-area">
         <label for="search">Search for a movie:</label>
         <input type="text" id="search" placeholder="Type a movie name" />
+
         <label for="genre">Choose a genre:</label>
         <select id="genre">
           <option value="all">All Movies</option>
         </select>
       </section>
+
       <section id="movies">
-        <h2>Movies</h2>
-        <div class="movie-list" id="movie-list">
+        <div class="section-heading">
+          <p class="small-title">NOW POPULAR</p>
+          <h2>Movies</h2>
         </div>
+
+        <div class="movie-list" id="movie-list"></div>
       </section>
+
       <section id="review-form">
-        <h2>Add a Review</h2>
+        <div class="section-heading">
+          <p class="small-title">SHARE YOUR OPINION</p>
+          <h2>Add a Review</h2>
+        </div>
+
         <form id="review-form-element">
           <label for="movie-name">Movie name:</label>
-          <input type="text" id="movie-name" required />
+          <input type="text" id="movie-name" name="movie-name" required />
+
           <label for="rating">Rating:</label>
-          <select id="rating" required>
+          <select id="rating" name="rating" required>
             <option value="">Choose a rating</option>
-            <option value="5">5 Stars</option>
-            <option value="4">4 Stars</option>
-            <option value="3">3 Stars</option>
-            <option value="2">2 Stars</option>
-            <option value="1">1 Star</option>
+            <option value="5">5 Stars — Excellent</option>
+            <option value="4">4 Stars — Good</option>
+            <option value="3">3 Stars — Okay</option>
+            <option value="2">2 Stars — Not great</option>
+            <option value="1">1 Star — Poor</option>
           </select>
+
           <label for="review">Your review:</label>
-          <textarea id="review" rows="5" required></textarea>
+          <textarea
+            id="review"
+            name="review"
+            rows="5"
+            minlength="10"
+            required
+            placeholder="Write at least 10 characters..."
+          ></textarea>
+
           <button type="submit">Submit Review</button>
+          <p id="message"></p>
         </form>
-        <p id="message"></p>
       </section>
     </main>
+
     <footer>
       <p>Reel Talk &copy; 2026</p>
+      <p>Movies. Opinions. Conversations.</p>
     </footer>
   </body>
 </html>

@@ -123,3 +123,13 @@ reviewForm.addEventListener("submit", function (event) {
 
 loadMovies();
 loadGenres();
+
+const menuButton = document.querySelector("#menu-button");
+const mainNav = document.querySelector("#main-nav");
+
+menuButton.addEventListener("click", () => {
+  const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+
+  menuButton.setAttribute("aria-expanded", !isExpanded);
+  mainNav.classList.toggle("show-menu");
+});
