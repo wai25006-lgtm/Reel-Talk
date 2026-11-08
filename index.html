@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reel Talk</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="js/main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Reel Talk</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="#movies">Movies</a>
+        <a href="#review-form">Add Review</a>
+      </nav>
+    </header>
+    <main>
+      <section class="welcome">
+        <h2>Welcome to Reel Talk</h2>
+        <p>Find movies, read reviews, and share your opinion.</p>
+      </section>
+      <section class="search-area">
+        <label for="search">Search for a movie:</label>
+        <input type="text" id="search" placeholder="Type a movie name" />
+        <label for="genre">Choose a genre:</label>
+        <select id="genre">
+          <option value="all">All Movies</option>
+        </select>
+      </section>
+      <section id="movies">
+        <h2>Movies</h2>
+        <div class="movie-list" id="movie-list">
+        </div>
+      </section>
+      <section id="review-form">
+        <h2>Add a Review</h2>
+        <form id="review-form-element">
+          <label for="movie-name">Movie name:</label>
+          <input type="text" id="movie-name" required />
+          <label for="rating">Rating:</label>
+          <select id="rating" required>
+            <option value="">Choose a rating</option>
+            <option value="5">5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="2">2 Stars</option>
+            <option value="1">1 Star</option>
+          </select>
+          <label for="review">Your review:</label>
+          <textarea id="review" rows="5" required></textarea>
+          <button type="submit">Submit Review</button>
+        </form>
+        <p id="message"></p>
+      </section>
+    </main>
+    <footer>
+      <p>Reel Talk &copy; 2026</p>
+    </footer>
+  </body>
+</html>

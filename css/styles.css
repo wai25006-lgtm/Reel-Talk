@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #eeeeee;
+  color: #222222;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 1rem;
+  background-color: #222222;
+  color: white;
+}
+
+header h1 {
+  margin: 0 0 1rem;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #f5c542;
+}
+
+main {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.welcome {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.search-area {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.search-area input,
+.search-area select {
+  padding: 0.7rem;
+  font-size: 1rem;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.movie-card {
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px #bbbbbb;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.movie-card img:hover {
+  transform: scale(1.05);
+}
+
+.movie-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.movie-card a,
+#movie-information a {
+  color: #5a189a;
+  font-weight: bold;
+}
+
+#review-form,
+#movie-information {
+  margin: 3rem 0;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+}
+
+form {
+  display: grid;
+  gap: 0.5rem;
+  max-width: 600px;
+}
+
+form input,
+form select,
+form textarea {
+  padding: 0.7rem;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #5a189a;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #3c096c;
+}
+
+#message {
+  color: #287d3c;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #222222;
+  color: white;
+  text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .movie-list {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-card img {
+    height: auto;
+  }
+}
